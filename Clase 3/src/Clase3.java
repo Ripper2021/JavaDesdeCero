@@ -1,19 +1,16 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 //Listas:
 // Es una estructura de datos que puede contener una serie de elementos
 // en una secuencia ordenada. 
 // - la lista se representa por consola con []
 // - La lista admite valores duplicados
 // - La lista ordenada los elementos en base a su ingreso. 
-
 public class Clase3 {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 	List<String> nombres = new ArrayList<String>();
 	//agregar elementos a una lista
 	nombres.add("Gustavo");
@@ -58,7 +55,6 @@ public class Clase3 {
     // que representa valores unicos.
 	// - No esta ordenado.
 	// - No admite valores duplicados
-	
 	Set<String> lenguajesDeprogramacion = new HashSet<String>();
 	lenguajesDeprogramacion.add("Python");
 	lenguajesDeprogramacion.add("Python");
@@ -96,6 +92,44 @@ public class Clase3 {
 	//Cuando usar Lista:
 	// Necesitas almacenar elementos duplicados
 	// Necesitas almacenar elementos en un orden especifico
-	// Que se puedan acceder a traves del indice.
+	// Que se puedan acceder a traves del indice.	
+/////////////////////////////////////////////////////////////////////	
+	//Map: En Java es una estructura de datos que se utiliza para
+	//	almacenar una colección de pares clave-valor. Cada Elemento
+	//  contiene dos partes: Una clave unica que se utiliza para identificar
+	//  el valor asociado. Y el valor de dicha clave.
+	//  Tipos de Maps:
+	// 	TreeMap
+	// 	HashMap
+	// 	LinkedHashMap
+	//HashMap: Es una implementación de Map que utiliza una tabla HASH.
+	// Para almacenar sus elementos. Es una de las implementaciones mas rapidas
+	// y eficientes, pero no garantiza el orden de los elementos.	
+	HashMap<String, Integer> usuarios = new HashMap<>();
+	usuarios.put("Gustavo", 30);
+	usuarios.put("Maria", 25);
+	usuarios.put("Pablo", 26);
+	usuarios.put("Hernan", 39);
+	usuarios.put("Ignacio", 22);
+	//Imprimo el par clave-valor:
+	System.out.println(usuarios);
+	//Accedemos a un elemento especifico:
+	int edadGustavo = usuarios.get("Gustavo");
+	System.out.println("La edad de gustavo es: " + edadGustavo);
+	//Modificar un elemento en clave-valor
+	usuarios.put("Gustavo", 50);
+	System.out.println("Los usuarios modificados son: " + usuarios);
+	
+	//Eliminar un elemento del HashMap
+	usuarios.remove("Gustavo");
+	System.out.println("Los usuarios fueron modificados: " + usuarios);
+	//Recorrer los elementos del HashMap
+	for (String nombre: usuarios.keySet()) //El metodo keySet nos permite recorrer todos los elementos del Map
+	{
+		int edad = usuarios.get(nombre);
+		System.out.println("El nombre es: " + nombre + " y su edad es: " + edad);
 	}
+	
+	}
+	
 }
