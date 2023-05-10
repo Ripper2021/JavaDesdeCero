@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    echo 'Building Mi proyecto (Build #1)'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    echo 'Probando...'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    echo 'Deployment activo...'
+                }
+            }
+        }
+    }
+}
