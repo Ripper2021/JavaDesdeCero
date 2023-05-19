@@ -1,0 +1,98 @@
+<!DOCTYPE html> <!-- Esto indica que el documento utiliza especificación HTML5. -->
+<html> <!-- Marca el inicio del elemento RAIZ del documento HTML -->
+<head> <!-- Contiene la información del encabezado del documento, como el titulo y la metadata. -->
+<meta charset="UTF-8"> <!-- Especifica el conjunto de caracteres utilizado en el documento. UTF-8 permite una gama amplia de caracteres -->
+<title>Mi pagina adicional.</title> <!-- Esto es el titulo que se va a ver en la pestaña del navegador. -->
+<!-- Aqui comienza el bloque de CSS que define el diseño a implementar en HTML -->
+<!--body: Selector que establece los estilos para el cuerpo del documento -->
+<!--container: Selecciona los elementos con la clase "container" y define los estilos correspondientes. -->
+<!-- button: Selecciona los elementos con la clase button y define los estilos correspondientes. -->
+<!-- alerta: Selecciona los elementos con la clase "alert" y define los estilos correspondientes. -->
+<!-- body: Marca el inicio de la seccion del cuerpo del documento, donde se coloca el contenido visible de la pagina. -->
+<style> 
+body
+{
+	background-color: #ECECEC;
+}
+.container 
+{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.button
+{
+	display: inline-bock;
+	padding: 10px 20px;
+	background-color: #1F4E5D;
+	color: #FFFFFF;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.alert
+{
+padding: 10px;
+background-color: #FFCC00;
+color: #333333;
+font-weight: bold;
+border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<!-- Crea un contenedor con la clase "container" que agrupa los elementos. -->
+<div class="container">
+<h1>Bienvenido a mi pagina extra</h1>
+<p>Aca voy a poner mas contenido.</p>
+<ul>
+<!-- Crea un elance que al hacer click, ejecuta la funcion showAlert() y muestra una alerta en el navegador -->
+	<li><a href= "#" onclick= "showAlert()">Mostrar la alerta</a></li>
+	<!--  Crea un enlace que al hacer click, ejecuta la función para mostrar u ocultar contenido. -->
+	<li><a href = "#" onclick= toggleVisibility()>Mostrar/Ocultar contenido</a></li>
+</ul>
+<!--  Creamos una clase botton y le pasamos contenido a la misma. -->
+<button class ="button">Boton de ejemplo</button>
+
+<div id="content" style="display: none;">
+	<p>Este contenido se va a mostrar y ocultar al hacer click	</p>
+</div>
+</div>
+<!-- Div se utiliza para crear divisiones o contenedores genericos dentro de HTML
+	 No tiene un significado especifico, se utiliza ampliamente como un elemento de bloque
+	 para agrupar y organizar otros elementos HTML, como por ejemplo, textos, imagenes, formularios,
+	 clases.
+	 Las funciones comunes de Div son las siguientes:
+	 - Agrupación y organización del contenido. Se puede utilizar para agrupar y organizar elementos relacionados
+	 Creando así una estructura logica dentro de tu pagina.
+	 - Estilización y diseño: Se utiliza como una caja contenedora que se puede estilizar
+	 utilizando CSS para aplicar estilos de diseño, fuentes y demas.
+	 - Selección y manipulación con javaScript: al tener identificados las secciones
+	 se le puede aplicar codigo de JavaScript.
+	 - Control de visibilidad: Utilizando las divisiones, podes hacer que
+	 los elementos sean visibles o no.
+  -->
+
+<!--  declaramos algunas funciones para ser implementadas luego. -->
+<!-- Esta seccion en mi documento de HTML implementa codigo de JavaScript. -->
+<script>
+function mostrarAlerta()
+{
+	alert("Esta es una alerta!")
+}
+
+function toggleVisibility()
+{
+	var content = document.getElementById("content")
+	if (content.style.display == "none")
+		{
+			content.style.display = "block";	
+		}
+	else
+		{
+			content.style.display = "none";
+		}	
+}
+</script>
+</body>
+</html>
